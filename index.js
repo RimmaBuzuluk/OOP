@@ -10,17 +10,31 @@ class Worker {
     this._rate = rate;
     this._days = days;
   }
+
+  getName() {
+    return this._name;
+  }
+  getSurname() {
+    return this._surname;
+  }
+
+  getRate() {
+    return this._rate;
+  }
+
+  getDays() {
+    return this._days;
+  }
+
   getSalary() {
     return this._rate * this._days;
   }
 }
 
 var worker = new Worker("Иван", "Иванов", 10, 31);
-var worker2 = new Worker("Дмитро", "Петров", 12, 25);
 
-console.log(worker._name); //выведет 'Иван'
-console.log(worker._surname); //выведет 'Иванов'
-console.log(worker._rate); //выведет 10
-console.log(worker._days); //выведет 31
-console.log(worker.getSalary());
-console.log(worker.getSalary() + worker2.getSalary());
+console.log(worker.getName()); //выведет 'Иван'
+console.log(worker.getSurname()); //выведет 'Иванов'
+console.log(worker.getRate()); //выведет 10
+console.log(worker.getDays()); //выведет 31
+console.log(worker.getSalary()); //выведет 310 - то есть 10*3
