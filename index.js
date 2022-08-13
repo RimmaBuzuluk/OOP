@@ -22,8 +22,16 @@ class Worker {
     return this._rate;
   }
 
+  setRate(rate) {
+    this._rate = rate;
+  }
+
   getDays() {
     return this._days;
+  }
+
+  setDays(days) {
+    this._days = days;
   }
 
   getSalary() {
@@ -33,8 +41,11 @@ class Worker {
 
 var worker = new Worker("Иван", "Иванов", 10, 31);
 
-console.log(worker.getName()); //выведет 'Иван'
-console.log(worker.getSurname()); //выведет 'Иванов'
 console.log(worker.getRate()); //выведет 10
 console.log(worker.getDays()); //выведет 31
-console.log(worker.getSalary()); //выведет 310 - то есть 10*3
+console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+
+//Теперь используем сеттер:
+worker.setRate(20); //увеличим ставку
+worker.setDays(10); //уменьшим дни
+console.log(worker.getSalary()); //выведет 200 - то есть 20*10
